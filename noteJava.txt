@@ -1,0 +1,21 @@
+INTERFACE
+
+1. You can put fields in Interface but you have to understand that they are final (constants). They are never going to change
+
+2. Method in interface is 'public' and 'abstract' so don't need to write.
+
+3. Interface is just an empty class that provides or tells someone what methods they must implement if they want to use. 
+
+ABSTRACT
+
+1. Whenever you want to create a class in which every method doesn't necessarily have to be implemented to use abstract class.
+
+2. There a no abstract fields.
+
+3. All methods don't have to be abstract.
+
+4. You can have static methods.
+
+5. Abstract method doesn't have body.
+
+6. You cannot create an object from abstract class.

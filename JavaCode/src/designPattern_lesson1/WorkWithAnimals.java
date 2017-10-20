@@ -70,6 +70,10 @@ public class WorkWithAnimals {
 		
 		// Cannot make a static reference to the non-static method 'sayHello()' from the type 'WorkWithAnimals'
 		// sayHello();
+		
+		// The method bePrivate() from the type Dog is not visible
+//		fido.bePrivate();
+		fido.accessPrivate();
 	}
 	
 	/**
