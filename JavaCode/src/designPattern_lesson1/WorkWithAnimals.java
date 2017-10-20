@@ -74,6 +74,10 @@ public class WorkWithAnimals {
 		// The method bePrivate() from the type Dog is not visible
 //		fido.bePrivate();
 		fido.accessPrivate();
+		
+		Giraffe giraffe = new Giraffe();
+		giraffe.setName("Frank");
+		System.out.println(giraffe.getName());
 	}
 	
 	/**

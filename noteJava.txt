@@ -1,10 +1,14 @@
-INTERFACE
+INTERFACE: a class with only abstract methods.
 
-1. You can put fields in Interface but you have to understand that they are final (constants). They are never going to change
+1. You can put fields in Interface but you have to understand that they are public, final and static (constants). They are never going to change.
 
-2. Method in interface is 'public' and 'abstract' so don't need to write.
+2. Method in interface is 'public' and 'abstract' is default so don't need to write.
 
 3. Interface is just an empty class that provides or tells someone what methods they must implement if they want to use. 
+
+4. You can add as many interfaces to a class using implements as you want.
+
+5. You can create an object from interface class.
 
 ABSTRACT
 
@@ -19,3 +23,9 @@ ABSTRACT
 5. Abstract method doesn't have body.
 
 6. You cannot create an object from abstract class.
+
+7. Subclasses can only extends one abstract class.
+
+PROTECTED
+
+_ Same like 'private' except subclasses

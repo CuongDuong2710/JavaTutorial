@@ -1,7 +1,7 @@
 package designPattern_lesson1;
 
 /**
- * Super class define general fields of Animal
+ * Super class defines general fields of Animal
  * @author QUOC CUONG
  *
  */
