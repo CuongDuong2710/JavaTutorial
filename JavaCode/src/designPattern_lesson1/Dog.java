@@ -23,6 +23,9 @@ public class Dog extends Animal{
 		setSound("Bark");
 		
 		// Strategy Pattern
+		// We set the Flys interface polymorphically
+		        // This sets the behavior as a non-flying Animal
+
 		flyingType = new CantFly();
 	}
 	
@@ -44,6 +47,11 @@ public class Dog extends Animal{
 	}
 	
 	// Strategy pattern - bad code. It duplicate if have a lot of animals can not fly.
+	/* BAD
+	    * You could override the fly method, but we are breaking
+	    * the rule that we need to abstract what is different to
+	    * the subclasses
+	    */
 //	@Override
 //	public void fly() {
 //		System.out.println("Cannot fly");
