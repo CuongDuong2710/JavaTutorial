@@ -1,5 +1,7 @@
 package designPattern_lesson1;
 
+import strategy_pattern.Flys;
+
 /**
  * Super class defines general fields of Animal
  * @author QUOC CUONG
@@ -10,6 +12,11 @@ public class Animal {
 	private double height;
 	private int weight;
 	private String sound;
+	
+	// Strategy Design Pattern
+	// Animal doesn't care what flying type.
+	// But it just knows the behavior is available to all of subclasses.
+	public Flys flyingType;
 	
 	/**
 	 * No 'static' means every single object is going to have
@@ -54,5 +61,20 @@ public class Animal {
 
 	public void setSound(String sound) {
 		this.sound = sound;
+	}
+	
+	// Strategy Design Pattern - bad code if we have a lot of animals (fly and can't fly) override. Fly() over and over.
+//	public void fly() {
+//		System.out.println("I'm flying");
+//	}
+	
+	// fly type
+	public String tryToFly() {
+		return flyingType.fly();
+	}
+	
+	// set new fly type
+	public void setFlyingAbility(Flys newFlyType) {
+		flyingType = newFlyType;
 	}
 }

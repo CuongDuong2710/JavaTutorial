@@ -1,5 +1,7 @@
 package designPattern_lesson1;
 
+import strategy_pattern.CantFly;
+
 /**
  * Dog is a Animal. It is a subclass of Animal
  * @author QUOC CUONG
@@ -19,6 +21,9 @@ public class Dog extends Animal{
 		
 		// setting sound of Dog
 		setSound("Bark");
+		
+		// Strategy Pattern
+		flyingType = new CantFly();
 	}
 	
 	// change value
@@ -37,5 +42,11 @@ public class Dog extends Animal{
 	public void accessPrivate() {
 		bePrivate();
 	}
+	
+	// Strategy pattern - bad code. It duplicate if have a lot of animals can not fly.
+//	@Override
+//	public void fly() {
+//		System.out.println("Cannot fly");
+//	}
 	
 }
