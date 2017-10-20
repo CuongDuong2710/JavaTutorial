@@ -10,6 +10,7 @@ public class Animals {
 	// Blue print for all animals
 	private String name = "Animal";
 	public String favFood = "Food";
+	protected String color = "random";
 	
 	/**
 	 * Subclass can access 'protected' function. 

@@ -5,21 +5,23 @@ public class JavaLessonFourteen {
 	public static void main(String[] args) {
 		Animals genericAnimal = new Animals();
 		
-		System.out.println(genericAnimal.getName()); // Animal
-		System.out.println(genericAnimal.favFood); // Food
+		System.out.println(genericAnimal.getName()); // Animal - private
+		System.out.println(genericAnimal.favFood); // Food - public
+		System.out.println(genericAnimal.color); // random - protected
 		
-		Cat morris = new Cat("Morris", "Tuna", "Rubber Mouse");
+		Cat morris = new Cat("Morris", "Tuna", "Rubber Mouse", "Blue");
 		
 		System.out.println();
 		
 		System.out.println(morris.getName()); // Morris
 		System.out.println(morris.favFood); // Tuna
 		System.out.println(morris.favToy); // Rubber Mouse
+		System.out.println(morris.color); // Blue
 		
 		// Polymorphism
 		// Every Cat Is an Animal
 		// Because every method & field in 'Animals' is in the class 'Cat'
-		Animals tabby = new Cat("Tabby", "Salmon", "Ball");
+		Animals tabby = new Cat("Tabby", "Salmon", "Ball", "Black");
 		
 		acceptAnimal(tabby);
 	}

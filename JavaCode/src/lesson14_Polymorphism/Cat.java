@@ -31,12 +31,14 @@ public class Cat extends Animals{
 		
 	}
 	
-	public Cat(String name, String favFood, String favToy) {
+	public Cat(String name, String favFood, String favToy, String color) {
 		// passing fields in super Animals. 
 		// If don't call super, it always return 'name = Animal' and 'favFood = Food'
 		 super(name, favFood);
 		// favorite toy does not exist in Animals class. 
 		// So we define it in this constructor. 
 		this.favToy = favToy;
+		// can access protected 'color' fields of Animals in same package
+		this.color = color;
 	}
 }
