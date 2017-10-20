@@ -33,6 +33,12 @@ _ Same like 'private' except subclasses
 ============================================
 STRATEGY PATTERN
 
-http://www.newthinktank.com/2012/08/strategy-design-pattern-tutorial/
+http://www.oodesign.com/strategy-pattern.html
+Motivation
+There are common situations when classes differ only in their behavior. For this cases is a good idea to isolate the algorithms in separate classes in order to have the ability to select different algorithms at runtime. 
 
+Intent
+Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy lets the algorithm vary independently from clients that use it.
+
+http://www.newthinktank.com/2012/08/strategy-design-pattern-tutorial/
 The pattern also allows you to eliminate code duplication. It separates behavior from super and subclasses
