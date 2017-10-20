@@ -2,6 +2,8 @@ package designPattern_lesson1;
 
 public class WorkWithAnimals {
 	
+	int justANum = 10;
+	
 	public static void main(String[] args) {
 		
 		// Define new Dog
@@ -37,6 +39,37 @@ public class WorkWithAnimals {
 		// change name
 		changeObjectName(fido);
 		System.out.println(fido.getName());
+		
+		// video 2
+		Animal doggy = new Dog();
+		Animal kitty = new Cat();
+		
+		// Doggy and kitty call right method is defined inside of their individual classes
+		System.out.println("Doggy says: " + doggy.getSound());
+		System.out.println("Kitty says: " + kitty.getSound());
+		
+		// add to array
+		Animal[] animals = new Animal[4];
+		animals[0] = doggy;
+		animals[1] = kitty;
+		
+		// call right method
+		System.out.println("Doggy says: " + animals[0].getSound());
+		System.out.println("Kitty says: " + animals[1].getSound());
+		
+		speakAnimal(kitty);
+		
+		// can't reference methods or fields that are not inside of animal.
+		// The method digHole() is undefined for the type Animal. So
+		// 1. create a method digHolde() in Animal
+		// 2. Cast to Dog
+		((Dog)doggy).digHole();
+		
+		// Cannot make a static reference to the non-static field 'justANum'
+		// System.out.println(justANum);
+		
+		// Cannot make a static reference to the non-static method 'sayHello()' from the type 'WorkWithAnimals'
+		// sayHello();
 	}
 	
 	/**
@@ -44,5 +77,13 @@ public class WorkWithAnimals {
 	 */
 	public static void changeObjectName(Dog fido) {
 		fido.setName("Marcus");
+	}
+	
+	public static void speakAnimal(Animal randAnimal) {
+		System.out.println("Animal says: " + randAnimal.getSound());
+	}
+	
+	public void sayHello() {
+		System.out.println("Hello");
 	}
 }
