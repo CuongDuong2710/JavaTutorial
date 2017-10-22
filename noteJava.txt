@@ -42,3 +42,63 @@ Define a family of algorithms, encapsulate each one, and make them interchangeab
 
 http://www.newthinktank.com/2012/08/strategy-design-pattern-tutorial/
 The pattern also allows you to eliminate code duplication. It separates behavior from super and subclasses
+
+============================================
+OBSERVER PATTERN
+http://www.oodesign.com/observer-pattern.html
+http://www.newthinktank.com/2012/08/observer-design-pattern-tutorial/
+
+
+_ The participants classes in this pattern are:
+Observable - interface or abstract class defining the operations for attaching and de-attaching observers to the client. In the GOF book this class/interface is known as Subject.
+ConcreteObservable - concrete Observable class. It maintain the state of the object and when a change in the state occurs it notifies the attached Observers.
+Observer - interface or abstract class defining the operations to be used to notify this object.
+ConcreteObserverA, ConcreteObserver2 - concrete Observer implementations.
+
+_ The observer pattern is used when:
+the change of a state in one object must be reflected in another object without keeping the objects tight coupled.
+the framework we are writing needs to be enhanced in future with new observers with minimal changes.
+Some Classical Examples:
+Model View Controller Pattern - The observer pattern is used in the model view controller (MVC) architectural pattern. In MVC the this pattern is used to decouple the model from the view. View represents the Observer and the model is the Observable object.
+Event management - This is one of the domains where the Observer patterns is extensively used. Swing and .Net are extensively using the Observer pattern for implementing the events mechanism.
+
+============================================
+BUILDER PATTERN
+Welcome to my Builder design pattern tutorial. You use the builder design pattern when you want to have many classes help in the creation of an object. 
+By having different classes build the object you can then easily create many different types of objects without being forced to rewrite code.
+
+The Builder pattern provides a different way to make complex objects like you'd make using the Abstract Factory design pattern.
+
+_ The participants classes in this pattern are:
+The Builder class specifies an abstract interface for creating parts of a Product object.
+The ConcreteBuilder constructs and puts together parts of the product by implementing the Builder interface. It defines and keeps track of the representation it creates and provides an interface for saving the product.
+The Director class constructs the complex object using the Builder interface.
+The Product represents the complex object that is being built.
+
+_ Builder Pattern is used when:
++ the creation algorithm of a complex object is independent from the parts that actually compose the object
++ the system needs to allow different representations for the objects that are being built
+============================================
+
+
+DESIGN PATTERN IN ANDROID
+
+https://www.raywenderlich.com/109843/common-design-patterns-for-android
+https://stackoverflow.com/questions/4916209/which-design-patterns-are-used-on-android
+https://kipalog.com/posts/Nhung-Design-Pattern-thuong-dung-trong-Android
+
+ANDROID ARCHITECTURE
+https://github.com/googlesamples/android-architecture
+https://www.techyourchance.com/mvp-mvc-android-1/
+
+ANDROID GRADLE
+https://kipalog.com/posts/Android-tu-co-ban-cho-den-nang-cao---Android-Gradle--P1
+
+DAGGER
+https://google.github.io/dagger/
+https://www.youtube.com/watch?v=oK_XtfXPkqw
+
+COMMAND GREEN ROBOT EVENTBUS
+https://github.com/greenrobot/EventBus
+
+REFACTORING CODE BY DEREK BANAS
