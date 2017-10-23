@@ -1,7 +1,7 @@
 package builder_pattern;
 
 /**
- * Defines all the methods a Robot mus have
+ * Defines all the methods a Robot must have
  * @author QUOC CUONG
  *
  */
