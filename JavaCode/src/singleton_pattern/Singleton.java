@@ -34,9 +34,40 @@ public class Singleton {
 	public static Singleton getInstance() {
 		if(firstInstance == null) {
 			
+			if(firstThread) {
+				
+				firstThread = false;
+				
+				Thread.currentThread();
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			
 			// if 'firstInstance' isn't exist so created.
 			firstInstance = new Singleton();
+			
+			// shuffle letter list
+			Collections.shuffle(firstInstance.letterList);
 		}
 		return firstInstance;
+	}
+	
+	public LinkedList<String> getLetterList() {
+		return firstInstance.letterList;
+	}
+	
+	public LinkedList<String> getTiles(int howManyTiles) {
+		LinkedList<String> tilesToSend = new LinkedList<>();
+		
+		for(int i = 0; i <= howManyTiles; i++) {
+			// remove string at index zero (letterList)
+			// and then add to tilesToSend
+			tilesToSend.add(firstInstance.letterList.remove(0));
+		}
+		return tilesToSend;
 	}
 }
