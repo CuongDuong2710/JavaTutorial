@@ -26,14 +26,24 @@ public class Singleton {
 
 	private LinkedList<String> letterList = new LinkedList<>(Arrays.asList(scrabbleLetters));
 	
+	// Used to slow down 1st thread
 	static boolean firstThread = true;
 	
 	// Constructor is 'private' to make sure that there is only one instance of class.
 	private Singleton(){}
 	
+	// We could make getInstance a synchronized method to force
+	// every thread to wait its turn. That way only one thread
+    // can access a method at a time. This can really slow everything
+	// down though
+	// public static synchronized Singleton getInstance()
+
 	public static Singleton getInstance() {
 		if(firstInstance == null) {
 			
+			 // This is here to test what happens if threads try
+			 // to create instances of this class
+
 			if(firstThread) {
 				
 				firstThread = false;
@@ -47,12 +57,21 @@ public class Singleton {
 				}
 			}
 			
-			// if 'firstInstance' isn't exist so created.
-			firstInstance = new Singleton();
-			
-			// shuffle letter list
-//			Collections.shuffle(firstInstance.letterList);
+			// Here we just use synchronized when the first object
+			// is created
+
+			synchronized (Singleton.class) {
+				if(firstInstance == null) {
+					// If the instance isn't needed it isn't created
+					// This is known as lazy instantiation
+					firstInstance = new Singleton();
+					
+					// shuffle letter list
+					Collections.shuffle(firstInstance.letterList);
+				}
+			}
 		}
+		
 		return firstInstance;
 	}
 	

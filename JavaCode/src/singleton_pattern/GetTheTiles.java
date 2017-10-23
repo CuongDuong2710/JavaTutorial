@@ -9,7 +9,7 @@ public class GetTheTiles implements Runnable {
 		
 		Singleton newInstance = Singleton.getInstance();
 		
-		System.out.println("Instace ID: " + System.identityHashCode(newInstance));
+		System.out.println("Instance ID: " + System.identityHashCode(newInstance));
 		
 		System.out.println(newInstance.getLetterList());
 		
