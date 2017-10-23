@@ -51,7 +51,7 @@ public class Singleton {
 			firstInstance = new Singleton();
 			
 			// shuffle letter list
-			Collections.shuffle(firstInstance.letterList);
+//			Collections.shuffle(firstInstance.letterList);
 		}
 		return firstInstance;
 	}
