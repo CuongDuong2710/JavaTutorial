@@ -5,6 +5,8 @@ import java.util.Random;
 //This is the Adaptee. The Adapter sends method calls
 //to objects that use the EnemyAttacker interface
 //to the right methods defined in EnemyRobot
+
+//square peg
 public class EnemyRobot {
 	
 	Random generator = new Random();

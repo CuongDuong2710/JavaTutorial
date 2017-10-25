@@ -8,7 +8,7 @@ package adapter_pattern;
 //All calls to EnemyAttacker methods are sent
 //instead to methods used by EnemyRobot
 
-
+// round hole
 public class EnemyRobotAdapter implements EnemyAttacker{
 
 	EnemyRobot theRobot;
