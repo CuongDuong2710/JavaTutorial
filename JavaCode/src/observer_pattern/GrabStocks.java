@@ -31,6 +31,8 @@ public class GrabStocks {
 		stockGrabber.setAaplPrice(677.00);
 		stockGrabber.setGoogPrice(676.40);
 		
+		System.out.println("-----Random-----");
+		
 		Runnable getIBM = new GetTheStock(stockGrabber, 2, "IBM", 197.00);
 		Runnable getAAP = new GetTheStock(stockGrabber, 2, "AAP", 677.60);
 		Runnable getGOOG = new GetTheStock(stockGrabber, 2, "GOOG", 676.40);
