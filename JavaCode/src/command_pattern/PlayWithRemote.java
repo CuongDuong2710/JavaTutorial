@@ -1,6 +1,8 @@
 package command_pattern;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 
 public class PlayWithRemote {
@@ -65,6 +67,24 @@ public class PlayWithRemote {
 		// -----------UNDO----------
 		
 		turnThemOff.pressUndo();
+		
+		// -----------LINKED LIST----------
+		
+		System.out.println("--------------------");
+		
+		LinkedList<Command> commands = new LinkedList<>();
+		
+		commands.addFirst(onCommand);
+		commands.addFirst(offCommand);
+		commands.addFirst(volUpCommand);
+		
+		for(Command cm : commands) {
+			cm.execute();
+		}
+		
+		for(Command cm : commands) {
+			cm.undo();
+		}
 		
 	}
 
