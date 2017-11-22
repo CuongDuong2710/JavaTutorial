@@ -16,7 +16,19 @@ public class BankNetwork {
 		
 		boolean cardVerification = false;
 		
-		int cardBankID = getFirstTwoDigits(theCard.getStripNumber()); 
+		int cardBankID = getFirstTwoDigits(theCard.getStripNumber());
+		
+		for (BankComputer bank : banksInDatabase) {
+			
+			if (bank.getBankId() == cardBankID) {
+				
+				cardVerification = true;
+				
+			}
+			
+		}
+		
+		return cardVerification;
 		
 	}
 
