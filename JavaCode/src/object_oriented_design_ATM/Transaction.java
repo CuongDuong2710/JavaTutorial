@@ -36,7 +36,7 @@ public class Transaction {
 	}
 
 	// returns the current date and time as a String
-	public String getCurrentDate() {
+	public String getCurrentDateTime() {
 		return dateFormat.format(currentDateTime);
 	}
 
@@ -58,6 +58,10 @@ public class Transaction {
 
 	public int getWithdrawalAmt() {
 		return withdrawalAmt;
+	}
+	
+	public void setWithdrawalAmt(int withDrawalAmt) {
+		this.withdrawalAmt = withDrawalAmt;
 	}
 
 	public int getAcctNumberUsed() {
@@ -108,7 +112,7 @@ public class Transaction {
 	
 	Transaction(int stripNumber) {
 		
-		//TODO: set bankID
+		bankID = BankNetwork.getFirstTwoDigits(stripNumber);
 		
 		currentDateTime = new Date();
 		
