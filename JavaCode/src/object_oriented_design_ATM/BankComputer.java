@@ -14,8 +14,10 @@ public class BankComputer {
 		
 		this.bankName = newBankName;
 		
+		// increase number of banks
 		numberOfBanks++;
 		
+		// increase bankID
 		this.bankID += numberOfBanks;
 	}
 	
@@ -40,8 +42,59 @@ public class BankComputer {
 				
 			}
 		}
+		
 		return cardVerification;
 	}
 	
-	//TODO: creating verifyThePIN() and requestWithdrawalAmt()
+	// Verifies that a card with the strip number and PIN is in a bank
+	public boolean verifyThePIN(Transaction transaction) {
+		
+		boolean cardVerification = false;
+		
+		if (transaction.isDidCardVerify()) {
+			
+			for (Account account : accounts) {
+				
+				if (account.getPin() == transaction.getPin() &&
+						(account.getStripNumber() == transaction.getStripNumber())) {
+					
+					cardVerification = true;
+					
+					transaction.setCustomerName(account.getCustomerName());
+					
+				}
+			}
+			
+		}
+		
+		return cardVerification;
+		
+	}
+	
+	public void requestWithdrawalAmt(Transaction transaction) {
+		
+		for (Account account : accounts) {
+			
+			if (account.getAcctNumber() == transaction.getAcctNumberUsed()) {
+				
+				if (account.getAcctBalance() >= transaction.getWithdrawalAmt()) {
+					
+					double newAcctBalance = account.getAcctBalance() - 
+									transaction.getWithdrawalAmt();
+					
+					account.setAcctBalance(newAcctBalance);
+					
+					transaction.setAcctBalance(newAcctBalance);
+					
+				} else {
+					
+					System.out.println("You can't withdrawal that much money");
+					
+				}
+				
+			}
+			
+		}
+		
+	}
 }
